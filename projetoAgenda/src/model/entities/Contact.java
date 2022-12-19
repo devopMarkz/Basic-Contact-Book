@@ -1,13 +1,13 @@
-package entities;
+package model.entities;
 
 public class Contact {
-	
+
 	private String name;
 	private String phoneNumber;
 	
 	// Construtores da classe
 	
-	public Contact () {
+	public Contact() {
 	}
 	
 	public Contact(String name, String phoneNumber) {
@@ -33,13 +33,10 @@ public class Contact {
 		this.phoneNumber = phoneNumber;
 	}
 	
-	// Métodos da classe 
+	// Métodos da classe
 	
 	@Override
-	public String toString () {
-		return name 
-			   + ","
-			   + phoneNumber;
+	public String toString() {
+		return name + "," + phoneNumber;
 	}
-
 }
