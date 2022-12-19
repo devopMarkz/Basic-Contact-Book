@@ -10,6 +10,8 @@ import model.services.ContactSearchService;
 
 public class ContactBook {
 	
+	// Atributos da classe 
+	
 	private File contactsFile = new File("C:\\Repositório local\\ProjetoAgenda\\projetoAgenda\\src\\contactListFile\\AgendaDeContatos.csv");
 	private File deletedContactsFile = new File("C:\\Repositório local\\ProjetoAgenda\\projetoAgenda\\src\\contactListFile\\AgendaDeContatosDeletados.csv");
 	private List<Contact> contactList = new ArrayList<>();

@@ -30,6 +30,7 @@ public class SearchContactsInArchives implements ContactSearchService {
 		return contactList;
 	}
 	
+	@Override
 	public List<Contact> getDeletedContactsList(File deletedContactsFile) {
 		List<Contact> deletedContactsList = new ArrayList<>();
 		
