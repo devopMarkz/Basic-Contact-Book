@@ -12,7 +12,7 @@ public class Main {
 	public static int introduction() {
 		System.out.println("**************** WELCOME TO YOUR CONTACT BOOK! ****************\n");
 		System.out.println("Choose the options below to continue using the contact book:");
-		System.out.print("1: Access contact book | 2: Add contact | 3: Remove contact | 4: Exit the application -> ");
+		System.out.print("1: Access contact book | 2: Add contact | 3: Remove contact | 4: access deleted contact book | 5: Exit the application -> ");
 		
 		return input.nextInt();
 	}

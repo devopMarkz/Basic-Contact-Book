@@ -31,6 +31,10 @@ public record UserInterface(
 			removeContact();
 			break;
 		}
+		case 4: {
+			acessDeletedContactBook();
+			break;
+		}
 		default:
 			break;
 		}
@@ -73,6 +77,16 @@ public record UserInterface(
 		String phoneNumber = input.nextLine().trim();
 		
 		contactBook.removeContact(new Contact(name, phoneNumber));
+	}
+	
+	private void acessDeletedContactBook() { // Opção 4 - Mostrar os contatos salvos na lista de contatos deletados
+		System.out.println("\n--------------- DELETED CONTACTS LIST ---------------\n");
+		
+		for (Contact contact : contactBook.getDeletedContactsList()) {
+			System.out.println("\t       " + ANSI_GREEN + contact + ANSI_RESET);
+		}
+		
+		System.out.println("\n------------- END DELETED CONTACTS LIST -------------\n");
 	}
 
 }

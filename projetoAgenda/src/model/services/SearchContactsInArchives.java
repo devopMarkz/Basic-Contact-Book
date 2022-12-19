@@ -29,4 +29,21 @@ public class SearchContactsInArchives implements ContactSearchService {
 
 		return contactList;
 	}
+	
+	public List<Contact> getDeletedContactsList(File deletedContactsFile) {
+		List<Contact> deletedContactsList = new ArrayList<>();
+		
+		try(Scanner readContacts = new Scanner(new BufferedReader(new FileReader(deletedContactsFile)))){
+			
+			while(readContacts.hasNextLine()) {
+				String[] contactsString = readContacts.nextLine().split(",");
+				deletedContactsList.add(new Contact(contactsString[0], contactsString[1]));
+			}
+		} catch (IOException e) {
+			System.out.println("Error: " + e.getMessage() + "Lista vazia!");
+			e.printStackTrace();
+		}
+
+		return deletedContactsList;
+	}
 }
