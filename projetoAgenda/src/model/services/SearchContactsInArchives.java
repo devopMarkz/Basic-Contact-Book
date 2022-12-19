@@ -17,7 +17,6 @@ public class SearchContactsInArchives implements ContactSearchService {
 		List<Contact> contactList = new ArrayList<>();
 		
 		try(Scanner readContacts = new Scanner(new BufferedReader(new FileReader(contactsFile)))){
-			
 			while(readContacts.hasNextLine()) {
 				String[] contactsString = readContacts.nextLine().split(",");
 				contactList.add(new Contact(contactsString[0], contactsString[1]));
@@ -35,7 +34,6 @@ public class SearchContactsInArchives implements ContactSearchService {
 		List<Contact> deletedContactsList = new ArrayList<>();
 		
 		try(Scanner readContacts = new Scanner(new BufferedReader(new FileReader(deletedContactsFile)))){
-			
 			while(readContacts.hasNextLine()) {
 				String[] contactsString = readContacts.nextLine().split(",");
 				deletedContactsList.add(new Contact(contactsString[0], contactsString[1]));
