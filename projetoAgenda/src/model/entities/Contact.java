@@ -1,6 +1,6 @@
 package model.entities;
 
-public class Contact {
+public class Contact implements Comparable<Contact>{
 
 	private String name;
 	private String phoneNumber;
@@ -38,5 +38,10 @@ public class Contact {
 	@Override
 	public String toString() {
 		return name + "," + phoneNumber;
+	}
+
+	@Override
+	public int compareTo(Contact other) {
+		return name.compareTo(other.name);
 	}
 }

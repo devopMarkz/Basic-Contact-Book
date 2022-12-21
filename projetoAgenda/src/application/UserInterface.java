@@ -1,5 +1,6 @@
 package application;
 
+import java.util.Collections;
 import java.util.Scanner;
 
 import model.entities.Contact;
@@ -42,6 +43,9 @@ public record UserInterface(
 	
 	private void acessContactBook() { // Opção 1 - Mostrar os contatos salvos na lista
 		System.out.println("\n--------------- CONTACT LIST ---------------\n");
+		
+		Collections.sort(contactBook.getContactList()); // Ordena os contatos por ordem alfabética
+		Collections.sort(contactBook.getDeletedContactsList());
 		
 		for (Contact contact : contactBook.getContactList()) {
 			System.out.println("\t       " + ANSI_GREEN + contact + ANSI_RESET);
