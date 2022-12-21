@@ -58,6 +58,7 @@ public class ContactBook {
 	
 	private void updateContactListFile() { // Atualiza o arquivo AgendaDeContatos.csv conforme a lista do objeto ContactBook
 		try(BufferedWriter insertDataIntoCsvFile = new BufferedWriter(new FileWriter(contactsFile))) {
+			Collections.sort(contactList);
 			for (Contact contact : contactList) {
 				insertDataIntoCsvFile.write(contact.toString());
 				insertDataIntoCsvFile.newLine();
@@ -70,6 +71,7 @@ public class ContactBook {
 	
 	private void updateDeletedContactsListFile() { // Atualiza o arquivo AgendaDeContatosDeletados.csv conforme a lista do objeto ContactBook
 		try(BufferedWriter insertDataIntoCsvFile = new BufferedWriter(new FileWriter(deletedContactsFile))) {
+			Collections.sort(deletedContactsList);
 			for (Contact contact : deletedContactsList) {
 				insertDataIntoCsvFile.write(contact.toString());
 				insertDataIntoCsvFile.newLine();

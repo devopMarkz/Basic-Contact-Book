@@ -1,6 +1,5 @@
 package application;
 
-import java.util.Collections;
 import java.util.Scanner;
 
 import model.entities.Contact;
@@ -43,10 +42,7 @@ public record UserInterface(
 	
 	private void acessContactBook() { // Opção 1 - Mostrar os contatos salvos na lista
 		System.out.println("\n--------------- CONTACT LIST ---------------\n");
-		
-		Collections.sort(contactBook.getContactList()); // Ordena os contatos por ordem alfabética
-		Collections.sort(contactBook.getDeletedContactsList());
-		
+
 		for (Contact contact : contactBook.getContactList()) {
 			System.out.println("\t       " + ANSI_GREEN + contact + ANSI_RESET);
 		}
@@ -64,7 +60,7 @@ public record UserInterface(
 			for (int i = 0; i < amountOfContacts; i++) { // Add contacts to contactList
 				System.out.print("Name: ");
 				String name = input.nextLine().trim(); // trim() para não prejudicar a leitura do arquivo .csv com espaços em branco
-				System.out.println("Phone number (Area code + phone Number): ");
+				System.out.print("Phone number (Area code + phone Number): ");
 				String phoneNumber = input.nextLine().trim();
 				
 				contactBook.addContact(new Contact(name, phoneNumber));
