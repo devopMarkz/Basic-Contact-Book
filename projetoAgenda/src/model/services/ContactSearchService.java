@@ -1,14 +1,14 @@
 package model.services;
 
-import java.io.File;
 import java.util.List;
 
 import model.entities.Contact;
+import model.entities.ContactBook;
 
 public interface ContactSearchService {
 	
-	public List<Contact> getContactList(File contactsFile);
+	public List<Contact> getContactList(ContactBook contactBook);
 	
-	public List<Contact> getDeletedContactsList(File deletedContactsFile);
+	public List<Contact> getDeletedContactsList(ContactBook contactBook);
 
 }

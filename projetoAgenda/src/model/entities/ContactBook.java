@@ -24,8 +24,8 @@ public class ContactBook {
 	}
 	
 	public ContactBook(ContactSearchService contacts) { // Recebe uma dependência que armazena os contatos do arquivo em contactList
-		this.contactList = contacts.getContactList(contactsFile);
-		this.deletedContactsList = contacts.getDeletedContactsList(deletedContactsFile);
+		this.contactList = contacts.getContactList(new ContactBook());
+		this.deletedContactsList = contacts.getDeletedContactsList(new ContactBook());
 	}
 	
 	// Métodos getters and setters
