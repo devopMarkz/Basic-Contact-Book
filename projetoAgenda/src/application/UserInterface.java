@@ -1,5 +1,6 @@
 package application;
 
+import java.util.List;
 import java.util.Scanner;
 
 import model.entities.Contact;
@@ -43,11 +44,15 @@ public record UserInterface(
 	private void acessContactBook() { // Opção 1 - Mostrar os contatos salvos na lista
 		System.out.println("\n--------------- CONTACT LIST ---------------\n");
 
-		for (Contact contact : contactBook.getContactList()) {
-			System.out.println("\t       " + ANSI_GREEN + contact + ANSI_RESET);
-		}
+		printList(contactBook.getContactList());
 		
 		System.out.println("\n------------- END CONTACT LIST -------------\n");
+	}
+	
+	private void printList(List<?> lista) {
+		for (Object object : lista) {
+			System.out.println("\t       " + ANSI_GREEN + object + ANSI_RESET);
+		}
 	}
 	
 	private void addContact() { // Opção 2 - Salvar contatos na lista
